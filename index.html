@@ -1,0 +1,40 @@
+<!doctype html>
+<html ng-app="videograte">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Videograte</title>
+
+        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" type="text/css" href="app.css">
+    </head>
+    <body>
+    	<div class="videograte-main-container" id="videograte-main-container">
+        <ng-view></ng-view>
+			</div>
+        <script>
+        	function init() {
+		        gapi.client.setApiKey('YOUR_API_KEY_HERE');
+		        gapi.client.load('youtube', 'v3');
+		      }
+        </script>
+        <script src="https://apis.google.com/js/client.js?onload=init"></script>
+
+
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+        <script src="bower_components/ng-timeago/ngtimeago.js"></script>
+
+        <script src="app.js"></script>
+        <script src="videos/videos.js"></script>
+        <script src="services.js"></script>
+    </body>
+</html>

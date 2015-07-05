@@ -1,0 +1,160 @@
+body {
+	margin: 0;
+}
+
+.videograte-main-container {
+	left: 0px;
+	top: 0px;
+	width: 800px;
+	height: 700px;
+	border: 1px solid black;
+	background: #ccc;
+	overflow: hidden;
+}
+
+.video-result-container .video-image-thumbnail {
+	float: left;
+	width: 30%;
+}
+
+.video-result-container .video-text-items {
+	font-size: 12px;
+	padding-top: 5px;
+	padding-left: 5px;
+
+	float: left;
+	width: 70%;
+}
+
+.video-result-container .video-author {
+	font-size: 10px;
+}
+
+.video-result-container .video-time-ago {
+	font-size: 10px;
+}
+
+.video-result-container {
+	margin-bottom:5px;
+	cursor: pointer;
+}
+
+/* form ------------------------ */
+form {
+	margin: 5px;
+}
+
+/* player ---------------------- */
+.player-container {
+	text-align: center;
+}
+
+/* tabs ------------------------ */
+.tab-container {
+	padding: 5px;
+	height:207px;
+	overflow:auto;
+}
+
+.video-details-container {
+	height: 255px;
+	background: whitesmoke;
+	border-radius: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.tab-container .btn {
+	margin-bottom: 3px;
+}
+
+/* tabs: related videos ----------- */
+.related-item-container {
+	background: lightgray;
+	border:1px solid black;
+	margin: 0 5px 5px 0;
+	width: 184px;
+	height: 145px;
+	cursor: pointer;
+}
+
+.related-items-container {
+	text-align:center;
+	margin: auto;
+}
+
+/* tabs: playlist --------------------*/
+.playlist-videos-container {
+	overflow-x:scroll;
+	white-space: nowrap;
+}
+
+.playlist-video-container span {
+	white-space:normal;
+	width: 134px;
+	float:left;
+	margin-left:2px;
+}
+
+.playlist-video-container img {
+	margin-left: 4px;
+}
+
+.playlist-video-container {
+	cursor: pointer;
+	text-align: center;
+	margin-left: 5px;
+	display:inline-block;
+}
+
+.activevideoplaylist {
+	border:1px solid black;
+	border-radius: 3px;
+	background: rgb(151, 192, 255);
+}
+
+/* large playlist ---------------- */
+.lplaylist-video-container .video-image-thumbnail {
+	float: left;
+	width: 30%;
+}
+
+.lplaylist-video-container .video-text-items {
+	font-size: 12px;
+	padding-top: 5px;
+	padding-left: 5px;
+
+	float: left;
+	width: 70%;
+}
+
+.lplaylist-video-container .video-author {
+	font-size: 10px;
+}
+
+.lplaylist-video-container .video-time-ago {
+	font-size: 10px;
+}
+
+.lplaylist-video-container {
+	margin-bottom:5px;
+	cursor: pointer;
+}
+
+/* loop btn ------------------------------------------*/
+.loop-btn {
+	position: absolute;
+	left: 724px;
+	top: 403px;
+}
+
+
+/* Fix conflict between jQuery UI dialog and Bootstrap when resizing the dialog
+	thanks to gu jefers
+	http://stackoverflow.com/questions/24541674/conflict-between-jquery-ui-and-bootstrap-3-when-resizing
+*/
+.ui-dialog,.ui-dialog-content {
+    -webkit-box-sizing: content-box!important;
+    -moz-box-sizing:content-box!important;
+    box-sizing: content-box!important;
+}

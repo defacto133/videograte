@@ -1,0 +1,22 @@
+{
+  "name": "videograte",
+  "version": "0.0.0",
+  "authors": [
+    "Alessio <defacto133@gmail.com>"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.4.1",
+    "angular-sanitize": "~1.4.1",
+    "bootstrap": "~3.3.5",
+    "ng-timeago": "~0.0.2",
+    "angular": "~1.4.1",
+    "jquery-ui": "~1.11.4"
+  }
+}
