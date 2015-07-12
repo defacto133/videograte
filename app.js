@@ -2,29 +2,24 @@ angular.module('videograte',
 	[
 		'ngRoute',
 		'ngSanitize',
-		'ngtimeago'
+		'ngtimeago',
+
+		'videograte.mainview'
 	])
 
 .config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/',
 		{
-			templateUrl: 'videos/videos.html',
-			controller: 'VideoController',
-			controllerAs: 'videoCtrl'
+			templateUrl: 'mainview/main-view.html',
+			controller: 'MainViewCtrl',
+			controllerAs: 'mainViewCtrl'
 		});
 }])
 
-.filter('formatSearchType', function () {
-	return function (input) {
-		switch (input) {
-			case 'video,channel,playlist':
-				return 'All';
-			case 'video':
-				return 'Video';
-			case 'playlist':
-				return 'Playlist';
-			case 'channel':
-				return 'Channel';
-		}
-	};
+.value('configs', {
+	videograteMainContainer: $('#videograte-main-container'),
+	width: 800,
+	height: 630,
+
+	mainPlayerId: 'main-player'
 });

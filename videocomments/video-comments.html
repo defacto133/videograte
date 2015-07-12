@@ -1,0 +1,6 @@
+<div ng-repeat="comment in comments">
+		<span ng-bind-html="comment.snippet.topLevelComment.snippet.textDisplay"></span>
+		- <b>{{ comment.snippet.topLevelComment.snippet.authorDisplayName }}</b>
+	<hr>
+</div>
+<br style="clear: left;" />

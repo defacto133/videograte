@@ -1,0 +1,64 @@
+<div class="video-details-container">
+	<ul class="nav nav-tabs">
+	  <li role="presentation"
+	  		ng-class="{active: isActive('info')}"
+	  		ng-click="setActive('info')">
+	  	<a href="">Info</a>
+	  </li>
+	  <li role="presentation"
+	  		ng-class="{active: isActive('comments')}"
+	  		ng-click="setActive('comments')">
+	  	<a href="">Comments</a>
+	  </li>
+	  <li role="presentation"
+	  		ng-class="{active: isActive('related')}"
+	  		ng-click="setActive('related')">
+	  	<a href="">Related</a>
+	  </li>
+
+	  <li role="presentation"
+	  		ng-class="{active: isActive('playlist')}"
+	  		ng-click="setActive('playlist')">
+	  	<a href="">Playlist</a>
+	  </li>
+
+	  <li role="presentation"
+	  		ng-class="{active: isActive('channel')}"
+	  		ng-click="setActive('channel')">
+	    <a href="">
+	      Channel
+	    </a>
+	  </li>
+	</ul>
+
+	<div ng-show="isActive('info')" class="tab-container">
+
+		<video-info-widget></video-info-widget>
+
+	</div>
+
+	<div ng-show="isActive('comments')" class="tab-container">
+
+		<video-comments-widget></video-comments-widget>
+
+	</div>
+
+	<div ng-show="isActive('related')" class="tab-container container-fluid">
+
+		<video-related-widget></video-related-widget>
+
+	</div>
+
+	<div ng-show="isActive('playlist')" class="tab-container">
+
+		<playlist-widget></playlist-widget>
+
+	</div>
+
+	<div ng-show="isActive('channel')"
+		class="tab-container container-fluid">
+		
+		<channel-widget></channel-widget>
+
+	</div>
+</div>

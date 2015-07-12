@@ -1,0 +1,60 @@
+<button ng-click="playPreviousPlaylistVideo()"
+				class="btn btn-default btn-sm">
+	Previous
+</button>
+
+<button ng-click="playNextPlaylistVideo()"
+				class="btn btn-default btn-sm">
+	Next
+</button>
+
+<button ng-click="enlargePlaylist()"
+				class="btn btn-default btn-sm">
+	Enlarge
+</button>
+
+<snippet>{{ playlist.snippet.title }}</snippet>
+
+<div class="playlist-videos-container">
+	<div ng-repeat="playlistVideo in videos"
+				class="playlist-video-container"
+				ng-click="playVideo($index)"
+				ng-class="{'activevideoplaylist': isCurrentVideo($index)}">
+
+	<img ng-src="{{ playlistVideo.snippet.thumbnails.default.url }}" class="img-thumbnail">
+	<br>
+	<span>{{ playlistVideo.snippet.title | limitTo: 27}}
+		{{ playlistVideo.snippet.title.length > 27 ? '...' : '' }}</span>
+	</div>
+</div>
+
+<div id="playlist-dialog" title="Playlist">
+	<div class="lplaylist-videos-container">
+		<div class="lplaylist-video-container"
+		ng-repeat="video in videos"
+		ng-class="{'activevideoplaylist': isCurrentVideo($index)}">
+
+			<div ng-click="playVideo($index)">
+				<div class="video-image-thumbnail">
+					<img ng-src="{{ video.snippet.thumbnails.default.url }}" class="img-thumbnail">
+				</div>
+
+				<div class="video-text-items">
+					<span class="video-title">
+						{{ video.snippet.title }}
+					</span>
+					<br>
+					<span class="video-author">
+						by {{ video.snippet.channelTitle }}
+					</span>
+					⋅
+					<span class="video-time-ago">
+						{{ video.snippet.publishedAt | timeago }}
+					</span>
+				</div>
+
+				<br style="clear: left;" />
+			</div> <!-- /ng-show if it's a video -->
+		</div>
+	</div>
+</div>

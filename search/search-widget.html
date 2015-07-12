@@ -1,0 +1,101 @@
+<form ng-submit="search()">
+	<div class="row">
+		<div class="col-xs-6">
+			<div class="input-group">
+		      <input type="text" class="form-control" ng-model="searchObj.q">
+		      <span class="input-group-btn">
+		        <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+		      </span>
+			</div><!-- /input-group -->
+		</div>
+
+		<div class="col-xs-6">
+			<div class="dropdown">
+				  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				    {{ searchObj.type | formatSearchType }}
+				    <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				    <li><a href="" ng-click="setSearchType('video,channel,playlist')">All</a></li>
+				    <li><a href="" ng-click="setSearchType('video')">Video</a></li>
+				    <li><a href="" ng-click="setSearchType('playlist')">Playlist</a></li>
+				    <li><a href="" ng-click="setSearchType('channel')">Channel</a></li>
+				  </ul>
+			</div>
+		</div>
+	</div>
+</form>
+
+<div id="video-dialog" title="Search results">
+  <div class="video-results-container">
+  	<div class="video-result-container"
+  				ng-repeat="video in items">
+
+  		<div ng-show="video.id.kind === 'youtube#video'"
+  					ng-click="playVideo(video)">
+	  		<div class="video-image-thumbnail">
+	  			<img ng-src="{{ video.snippet.thumbnails.default.url }}" class="img-thumbnail">
+	  		</div>
+
+	  		<div class="video-text-items">
+		  		<span class="video-title">
+						{{ video.snippet.title }}
+					</span>
+					<br>
+					<span class="video-author">
+						by <a href="" ng-click="openChannelFromVideo(video, $event)">
+								{{ video.snippet.channelTitle }}</a>
+					</span>
+					⋅
+					<span class="video-time-ago">
+						{{ video.snippet.publishedAt | timeago }}
+					</span>
+				</div>
+
+				<br style="clear: left;" />
+			</div> <!-- /ng-show if it's a video -->
+
+			<div ng-show="video.id.kind === 'youtube#playlist'"
+						ng-click="playPlaylist(video)">
+				<div class="video-image-thumbnail">
+	  			<img ng-src="{{ video.snippet.thumbnails.default.url }}" class="img-thumbnail">
+	  		</div>
+
+	  		<div class="video-text-items">
+		  		<span class="video-title">
+						<b>Playlist</b>: {{ video.snippet.title }}
+					</span>
+					<br>
+					<span class="video-author">
+						by {{ video.snippet.channelTitle }}
+					</span>
+					⋅
+					<span class="video-time-ago">
+						{{ video.snippet.publishedAt | timeago }}
+					</span>
+				</div>
+
+				<br style="clear: left;" />
+			</div>
+
+			<div ng-show="video.id.kind === 'youtube#channel'"
+						ng-click="openChannel(video)">
+				<div class="video-image-thumbnail">
+	  			<img ng-src="{{ video.snippet.thumbnails.default.url }}" class="img-thumbnail">
+	  		</div>
+
+	  		<div class="video-text-items">
+		  		<span class="video-title">
+						<b>Channel</b>: {{ video.snippet.title }}
+					</span>
+					<br>
+					<span class="video-author">
+						{{ video.snippet.description }}
+					</span>
+				</div>
+
+				<br style="clear: left;" />
+			</div>
+  	</div> <!-- /video-result-container ng-repeat -->
+  </div>
+</div>

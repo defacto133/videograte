@@ -1,0 +1,47 @@
+<div style="text-align:center">
+	<span>{{ channel.snippet.title }}<span>
+	<div class="btn-group btn-group-xs" role="group" >
+		<button type="button"
+						class="btn btn-default"
+						ng-class="{'active': isActiveTab('videos')}"
+						ng-click="show('videos')">Videos</button>
+		<button type="button"
+						class="btn btn-default"
+						ng-class="{'active': isActiveTab('playlist')}"
+						ng-click="show('playlist')">Playlist</button>
+	</div>
+</div>
+
+<div ng-show="isActiveTab('videos')"
+			class="row related-items-container">
+
+	<div ng-repeat="video in channelVideos"
+				class="col-xs-3 related-item-container text-center"
+				ng-click="playVideo(video)">
+
+			<div class="related-video-image-thumbnail">
+  			<img ng-src="{{ video.snippet.thumbnails.default.url }}" class="img-thumbnail">
+  		</div>
+			{{ video.snippet.title | limitTo: 27 }}
+			{{ video.snippet.title.length > 27 ? '...' : '' }}
+
+	</div>
+
+</div>
+
+<div ng-show="isActiveTab('playlist')"
+			class="row related-items-container">
+
+	<div ng-repeat="playlist in channelPlaylists"
+				class="col-xs-3 related-item-container text-center"
+				ng-click="playPlaylist(playlist)">
+
+			<div class="related-video-image-thumbnail">
+  			<img ng-src="{{ playlist.snippet.thumbnails.default.url }}" class="img-thumbnail">
+  		</div>
+			{{ playlist.snippet.title | limitTo: 27 }}
+			{{ playlist.snippet.title.length > 27 ? '...' : '' }}
+
+	</div>
+	
+</div>

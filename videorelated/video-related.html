@@ -1,0 +1,13 @@
+<div class="row related-items-container">
+	<div ng-repeat="relatedVideo in videos"
+			class="col-xs-3 related-item-container text-center"
+			ng-hide="relatedVideo.snippet.title === ''"
+			ng-click="playVideo(relatedVideo)">
+
+			<div class="related-video-image-thumbnail">
+  			<img ng-src="{{ relatedVideo.snippet.thumbnails.default.url }}" class="img-thumbnail">
+  		</div>
+			{{ relatedVideo.snippet.title | limitTo: 27 }}
+			{{ relatedVideo.snippet.title.length > 27 ? '...' : '' }}
+	</div>
+</div>
