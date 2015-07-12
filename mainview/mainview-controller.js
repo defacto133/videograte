@@ -14,10 +14,13 @@
 			'videoRelatedAPI',
 			'videoInfoAPI',
 			'tabsAPI',
+			'preferencesAPI',
+			'youTubeData',
 		function(youTubePlayerVideo, $scope, configs,
-				searchAPI, playlistAPI, channelAPI, videoRelatedAPI, videoInfoAPI, tabsAPI) {
+				searchAPI, playlistAPI, channelAPI, videoRelatedAPI,
+				videoInfoAPI, tabsAPI, preferencesAPI, youTubeData) {
 			var vm = this;
-			
+
 			// attributes
 			vm.videos = [];
 			vm.loop = false;
@@ -25,6 +28,22 @@
 
 			// functions
 			vm.toggleLoop = toggleLoop;
+
+			// play default video
+			$scope.$watch(function () {
+				return youTubePlayerVideo.ready[vm.playerId];
+			}, function (ready) {
+				var defaultVideo;
+				if (ready) {
+					defaultVideo = preferencesAPI.getDefaultVideo();
+					if (defaultVideo) {
+						youTubeData.youTubeDataReady()
+							.then(function () {
+								playVideo(defaultVideo);
+							});
+					}
+				}
+			});
 
 			// search API
 			$scope.$watch(function() {

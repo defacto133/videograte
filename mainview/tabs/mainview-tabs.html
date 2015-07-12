@@ -29,6 +29,14 @@
 	      Channel
 	    </a>
 	  </li>
+
+	  <li role="presentation"
+	  		ng-class="{active: isActive('preferences')}"
+	  		ng-click="setActive('preferences')">
+	    <a href="">
+	      Preferences
+	    </a>
+	  </li>
 	</ul>
 
 	<div ng-show="isActive('info')" class="tab-container">
@@ -60,5 +68,12 @@
 		
 		<channel-widget></channel-widget>
 
+	</div>
+
+	<div ng-show="isActive('preferences')"
+		class="tab-container container-fluid">
+
+		<preferences-widget></preferences-widget>
+		
 	</div>
 </div>

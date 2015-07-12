@@ -2,16 +2,16 @@
 	<div class="row">
 		<div class="col-xs-6">
 			<div class="input-group">
-		      <input type="text" class="form-control" ng-model="searchObj.q">
+		      <input type="text" class="form-control input-sm" ng-model="searchObj.q">
 		      <span class="input-group-btn">
-		        <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+		        <button class="btn btn-default btn-sm" type="submit"><span class="glyphicon glyphicon-search"></span></button>
 		      </span>
 			</div><!-- /input-group -->
 		</div>
 
 		<div class="col-xs-6">
 			<div class="dropdown">
-				  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				  <button class="btn btn-default dropdown-toggle btn-sm" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 				    {{ searchObj.type | formatSearchType }}
 				    <span class="caret"></span>
 				  </button>

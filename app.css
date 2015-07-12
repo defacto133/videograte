@@ -8,7 +8,6 @@ body {
 	width: 800px;
 	height: 700px;
 	border: 1px solid black;
-	background: #ccc;
 	overflow: hidden;
 }
 
@@ -58,7 +57,6 @@ form {
 
 .video-details-container {
 	height: 255px;
-	background: whitesmoke;
 	border-radius: 5px;
 	margin-left: 5px;
 	margin-right: 5px;
@@ -72,8 +70,8 @@ form {
 .related-item-container {
 	background: lightgray;
 	border:1px solid black;
-	margin: 0 5px 5px 0;
-	width: 184px;
+	margin: 0 3px 3px 0;
+	width: 188px !important;
 	height: 145px;
 	cursor: pointer;
 }

@@ -54,7 +54,9 @@
 
 				// 4. The API will call this function when the video player is ready.
 				function onPlayerReady(event) {
-					//event.target.playVideo();
+					$scope.$apply(function () {
+						youTubePlayerVideo.ready[playerId] = true;
+					});
 				}
 
 				// 5. The API calls this function when the player's state changes.

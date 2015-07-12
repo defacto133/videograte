@@ -1,0 +1,26 @@
+/* tabs: related videos ----------- */
+.related-item-container {
+	background: #242424;
+}
+
+.video-result-container {
+	background: #242424;
+	color: #ebebeb;
+}
+
+.video-author a {
+	color:#CCCCCC;
+}
+
+.ui-dialog {
+	background: #060606;
+}
+
+.activevideoplaylist {
+	background: #242424;
+	color: #ebebeb;
+}
+
+.video-text-items {
+	color: #CCCCCC;
+}

@@ -18,6 +18,7 @@
 			playerReadyDeferred = $q.defer(),
 			states = {},
 			videos = {},
+			ready = {},
 			service = {
 						loadVideoById: loadVideoById,
 						stopVideo: stopVideo,
@@ -26,6 +27,7 @@
 
 						videos: videos,
 						states: states,
+						ready: ready,
 
 						toggleLoop: toggleLoop,
 

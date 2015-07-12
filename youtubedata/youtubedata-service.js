@@ -3,10 +3,11 @@
 
 	angular.module('videograte.youtubedata')
 
-	.factory('youTubeData', ['$q', youTubeData]);
+	.factory('youTubeData', ['$q', '$window', youTubeData]);
 
-	function youTubeData($q) {
-		var comments,
+	function youTubeData($q, $window) {
+		var deferred = $q.defer(),
+			comments,
 			relatedVideos,
 			playlistVideos,
 			searchResults,
@@ -23,10 +24,33 @@
 						getChannelVideos: getChannelVideos,
 						getChannelPlaylists: getChannelPlaylists,
 
-						getVideoData: getVideoData
+						getVideoData: getVideoData,
+
+						youTubeDataReady: youTubeDataReady
 					};
 
+		$window.initGapi = function initGapi() {
+			gapi.client.setApiKey('YOUR_API_KEY_HERE');
+			gapi.client.load('youtube', 'v3', function () {
+				deferred.resolve();
+			});
+		};
+
+		init();
+
 		return service;
+
+		function init() {
+			var tag = document.createElement('script');
+
+			tag.src = "https://apis.google.com/js/client.js?onload=initGapi";
+			var firstScriptTag = document.getElementsByTagName('script')[0];
+			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		};
+
+		function youTubeDataReady() {
+			return deferred.promise;
+		};
 
 		function getRelatedVideos(video) {
 			var deferred = $q.defer();

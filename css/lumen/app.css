@@ -1,0 +1,33 @@
+body {
+	background: #C7C7C7;
+}
+
+.nav-tabs>li.active>a {
+	background: #E7E7E7;
+}
+
+/* tabs: related videos ----------- */
+.related-item-container {
+	
+}
+
+.video-result-container {
+	background: #E7E7E7;
+	
+}
+
+.video-author a {
+	
+}
+
+.ui-dialog {
+	background: #C7C7C7;
+}
+
+.activevideoplaylist{
+	
+}
+
+.video-text-items {
+	
+}

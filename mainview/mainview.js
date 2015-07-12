@@ -10,6 +10,7 @@
 			'videograte.videocomments',
 			'videograte.videorelated',
 			'videograte.channel',
-			'videograte.youtubedata'
+			'videograte.youtubedata',
+			'videograte.preferences'
 		]);
 })();
